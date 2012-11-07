@@ -20,6 +20,8 @@ def on_message(message, status):
             'user': message.Sender.Handle,
             'message': message.Body,
             'room': message.Chat.Name,
+            'roomName': message.Chat.FriendlyName,
+            'roomTopic': message.Chat.Topic,
         })
         sys.stdout.write(json_string + '\n')
         sys.stdout.flush()

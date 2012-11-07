@@ -30,6 +30,8 @@ class SkypeAdapter extends Adapter
             user = self.userForId id
             user.name = decoded.user
         user.room = decoded.room
+        user.roomName = decoded.roomName
+        user.roomTopic = decoded.roomTopic
         return unless decoded.message
         @receive new TextMessage user, decoded.message
     @skype.stderr.on 'data', (data) =>
